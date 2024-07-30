@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "stdlib.h": "c",
+        "libft.h": "c",
+        "ft_printf.h": "c",
+        "type_traits": "c",
+        "push_swap .h": "c",
+        "stdio.h": "c"
+    }
+}
