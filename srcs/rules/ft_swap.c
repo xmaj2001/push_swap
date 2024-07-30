@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:15:39 by xjose             #+#    #+#             */
-/*   Updated: 2024/07/30 02:42:20 by xjose            ###   ########.fr       */
+/*   Updated: 2024/07/30 14:01:52 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void ft_sa(t_item **head)
     second->next = frist->next;
     frist->next = second;
     *head = frist;
+    ft_printf("SA\n");
 }
 
 void ft_sb(t_item **head)
@@ -38,4 +39,5 @@ void ft_sb(t_item **head)
     second->next = frist->next;
     frist->next = second;
     *head = frist;
+    ft_printf("SB\n");
 }

@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:43:41 by xjose             #+#    #+#             */
-/*   Updated: 2024/07/30 04:32:45 by xjose            ###   ########.fr       */
+/*   Updated: 2024/07/30 14:02:41 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void ft_ra(t_item **head)
 	frist->next = NULL;
 	last = ft_getlast_item(*head);
 	last->next = frist;
+	ft_printf("RA\n");
 }
 
 void ft_rra(t_item **head)
@@ -39,6 +40,7 @@ void ft_rra(t_item **head)
 	penultema->next = NULL;
 	last->next = *head;
 	*head = last;
+	ft_printf("RRA\n");
 }
 
 void ft_rb(t_item **head)
@@ -53,6 +55,7 @@ void ft_rb(t_item **head)
 	frist->next = NULL;
 	last = ft_getlast_item(*head);
 	last->next = frist;
+	ft_printf("RB\n");
 }
 
 void ft_rrb(t_item **head)
@@ -68,4 +71,5 @@ void ft_rrb(t_item **head)
 	penultema->next = NULL;
 	last->next = *head;
 	*head = last;
+	ft_printf("RRB\n");
 }

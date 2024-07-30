@@ -6,6 +6,7 @@
         "ft_printf.h": "c",
         "type_traits": "c",
         "push_swap .h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "stdarg.h": "c"
     }
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 16:54:58 by hk                #+#    #+#             */
-/*   Updated: 2024/07/30 03:13:42 by xjose            ###   ########.fr       */
+/*   Created: 2024/07/30 12:29:30 by xjose             #+#    #+#             */
+/*   Updated: 2024/07/30 15:07:01 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,24 @@ void imprimir(t_item *list)
 
 int main(void)
 {
-    t_item *header;
+    t_item *pilha;
+    int h;
 
-    header = NULL;
+    h = 0;
+    pilha = NULL;
 
-    //  ft_addlast(&header);
-    ft_additem(&header, 10);
-    ft_additem(&header, 20);
-    ft_additem(&header, 30);
-    ft_rra(&header);
-    imprimir(header);
-   
+    //  ft_addlast(&pilha);
+    ft_additem(&pilha, 20);
+    ft_additem(&pilha, 50);
+    ft_additem(&pilha, 30);
+    // ft_rra(&pilha);
+    imprimir(pilha);
+    while (h == 0)
+    {
+        teste(&pilha);
+        h = ft_isord(pilha);
+    }
+    printf("\n");
+    imprimir(pilha);
     return 0;
 }
-
