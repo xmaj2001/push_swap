@@ -6,7 +6,7 @@
 #    By: xjose <xjose@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 17:11:20 by hk                #+#    #+#              #
-#    Updated: 2024/07/30 02:32:35 by xjose            ###   ########.fr        #
+#    Updated: 2024/07/31 21:23:25 by xjose            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = app
 
 LIBFT = ./libft
 CFLAGS = -Wall -Wextra -Werror
-
+CFILS = srcs/app/*.c srcs/rules/*.c srcs/utils/*.c 
 CC = cc
 
 
@@ -22,7 +22,7 @@ all: $(NAME)
 
 $(NAME):
 	$(MAKE) -C $(LIBFT)
-	$(CC) main.c srcs/*.c srcs/rules/*.c -o $(NAME) -L$(LIBFT) -lft
+	$(CC) main.c $(CFILS) -o $(NAME) -L$(LIBFT) -lft
 
 clean:
 	$(MAKE) -C $(LIBFT) clean

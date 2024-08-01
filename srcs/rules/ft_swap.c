@@ -6,38 +6,23 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:15:39 by xjose             #+#    #+#             */
-/*   Updated: 2024/07/30 14:01:52 by xjose            ###   ########.fr       */
+/*   Updated: 2024/07/31 21:18:19 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap .h"
+#include "../../push_swap.h"
 
-void ft_sa(t_item **head)
+void	ft_swap(t_item **pilha, char *ms)
 {
-    t_item *frist;
-    t_item *second;
+	t_item	*frist;
+	t_item	*second;
 
-    if (*head == NULL || (*head)->next == NULL)
-        return;
-    second = *head;
-    frist = second->next;
-    second->next = frist->next;
-    frist->next = second;
-    *head = frist;
-    ft_printf("SA\n");
-}
-
-void ft_sb(t_item **head)
-{
-    t_item *frist;
-    t_item *second;
-
-    if (*head == NULL || (*head)->next == NULL)
-        return;
-    second = *head;
-    frist = second->next;
-    second->next = frist->next;
-    frist->next = second;
-    *head = frist;
-    ft_printf("SB\n");
+	if (*pilha == NULL || (*pilha)->next == NULL)
+		return ;
+	frist = *pilha;
+	second = frist->next;
+	frist->next = second->next;
+	second->next = frist;
+	*pilha = second;
+	ft_printf("%s\n", ms);
 }
