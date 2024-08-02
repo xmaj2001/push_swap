@@ -6,20 +6,20 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 20:48:46 by xjose             #+#    #+#             */
-/*   Updated: 2024/07/31 21:20:03 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/02 15:52:09 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_additem(t_item **head, int value)
+void ft_additem(t_item **head, int value)
 {
-	t_item	*new_item;
-	t_item	*last;
+	t_item *new_item;
+	t_item *last;
 
 	new_item = (t_item *)malloc(sizeof(t_item));
 	if (new_item == NULL)
-		return ;
+		return;
 	if (*head == NULL)
 	{
 		new_item->value = value;
@@ -35,14 +35,14 @@ void	ft_additem(t_item **head, int value)
 	}
 }
 
-int	ft_count_items(t_item **head)
+int ft_count_items(t_item *head)
 {
-	t_item	*tmp;
-	int		len;
+	t_item *tmp;
+	int len;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return (0);
-	tmp = *head;
+	tmp = head;
 	len = 0;
 	while (tmp != NULL)
 	{
@@ -52,14 +52,14 @@ int	ft_count_items(t_item **head)
 	return (len);
 }
 
-int	ft_max_value(t_item **head)
+int ft_max_value(t_item *head)
 {
-	t_item	*tmp;
-	int		max;
+	t_item *tmp;
+	int max;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return (0);
-	tmp = *head;
+	tmp = head;
 	max = 0;
 	while (tmp != NULL)
 	{
@@ -70,10 +70,46 @@ int	ft_max_value(t_item **head)
 	return (max);
 }
 
-int	ft_is_ordered(t_item *head)
+int ft_min_value(t_item *head)
 {
-	t_item	*tmp;
-	int		result;
+	t_item *tmp;
+	int min;
+
+	if (head == NULL)
+		return (0);
+	tmp = head;
+	min = 0;
+	while (tmp != NULL)
+	{
+		if (min > tmp->value)
+			min = tmp->value;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+t_item *ft_min_item(t_item *head)
+{
+	t_item *tmp;
+	t_item *min;
+
+	if (head == NULL)
+		return (0);
+	tmp = head;
+	min = head;
+	while (tmp != NULL)
+	{
+		if (min->value > tmp->value)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+int ft_is_ordered(t_item *head)
+{
+	t_item *tmp;
+	int result;
 
 	if (head == NULL)
 		return (0);

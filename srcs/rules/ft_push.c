@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 14:55:28 by xjose             #+#    #+#             */
-/*   Updated: 2024/07/31 21:18:33 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/02 08:32:35 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_push(t_item **pilha1, t_item **pilha2, char *ms)
 {
 	t_item	*item;
 
-	if (*pilha1 == NULL || *pilha2 == NULL)
+	if (*pilha1 == NULL)
 		return ;
 	item = *pilha1;
 	*pilha1 = item->next;

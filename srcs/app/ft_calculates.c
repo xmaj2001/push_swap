@@ -6,17 +6,17 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:02:02 by xjose             #+#    #+#             */
-/*   Updated: 2024/07/31 21:18:49 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/02 15:57:24 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_calculate_three(t_item **pilha)
+void ft_calculate_three(t_item **pilha)
 {
-	int	max;
+	int max;
 
-	max = ft_max_value(pilha);
+	max = ft_max_value(*pilha);
 	while (ft_is_ordered(*pilha) != 1)
 	{
 		if (max == (*pilha)->value)
@@ -27,3 +27,4 @@ void	ft_calculate_three(t_item **pilha)
 			ft_rules(pilha, SA, END);
 	}
 }
+

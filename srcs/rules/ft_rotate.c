@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:43:41 by xjose             #+#    #+#             */
-/*   Updated: 2024/07/31 21:18:26 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/02 15:54:21 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_rotate(t_item **pilha, char *ms)
 	*pilha = frist->next;
 	frist->next = NULL;
 	last->next = frist;
-	ft_printf("%s\n", ms);
+	ft_printf("%s", ms);
 }
 
 void	ft_rrotate(t_item **pilha, char *ms)
@@ -39,5 +39,17 @@ void	ft_rrotate(t_item **pilha, char *ms)
 	penultema->next = NULL;
 	last->next = *pilha;
 	*pilha = last;
-	ft_printf("%s\n", ms);
+	ft_printf("%s", ms);
+}
+
+void	ft_rrotates(t_item **stack_a, t_item **stack_b)
+{
+	ft_rotate(stack_a,"r");
+	ft_rotate(stack_b,"r");
+}
+
+void	ft_rrrotates(t_item **stack_a, t_item **stack_b)
+{
+	ft_rrotate(stack_a,"rr");
+	ft_rrotate(stack_b,"r");
 }
