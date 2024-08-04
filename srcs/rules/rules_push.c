@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   rules_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 14:55:28 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/02 08:32:35 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/03 19:40:22 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_push(t_item **pilha1, t_item **pilha2, char *ms)
+void	rules_push(t_stack **stack1, t_stack **stack2, char *ms)
 {
-	t_item	*item;
+	t_stack	*item;
 
-	if (*pilha1 == NULL)
+	if (*stack1 == NULL)
 		return ;
-	item = *pilha1;
-	*pilha1 = item->next;
-	item->next = *pilha2;
-	*pilha2 = item;
+	item = *stack1;
+	*stack1 = item->next;
+	item->next = *stack2;
+	*stack2 = item;
 	ft_printf("%s\n", ms);
 }

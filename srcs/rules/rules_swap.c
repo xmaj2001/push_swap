@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   rules_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:15:39 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/02 08:43:34 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/03 19:34:41 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_swap(t_item **pilha, char *ms)
+void	rules_swap(t_stack **stack, char *ms)
 {
-	t_item	*frist;
-	t_item	*second;
+	t_stack	*frist;
+	t_stack	*second;
 
-	if (*pilha == NULL || (*pilha)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	frist = *pilha;
+	frist = *stack;
 	second = frist->next;
 	frist->next = second->next;
 	second->next = frist;
-	*pilha = second;
+	*stack = second;
 	ft_printf("%s\n", ms);
 }

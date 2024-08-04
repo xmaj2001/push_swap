@@ -7,6 +7,9 @@
         "type_traits": "c",
         "push_swap .h": "c",
         "stdio.h": "c",
-        "stdarg.h": "c"
+        "stdarg.h": "c",
+        "limits.h": "c",
+        "push_swap.h": "c",
+        "limits": "c"
     }
 }

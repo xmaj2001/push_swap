@@ -6,15 +6,15 @@
 #    By: xjose <xjose@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 17:11:20 by hk                #+#    #+#              #
-#    Updated: 2024/07/31 21:23:25 by xjose            ###   ########.fr        #
+#    Updated: 2024/08/04 15:33:49 by xjose            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = app
+NAME = push_swap
 
 LIBFT = ./libft
 CFLAGS = -Wall -Wextra -Werror
-CFILS = srcs/app/*.c srcs/rules/*.c srcs/utils/*.c 
+CFILS = srcs/*.c srcs/rules/*.c srcs/utils/*.c 
 CC = cc
 
 
@@ -37,3 +37,8 @@ re: fclean all
 rec: fclean all
 	$(MAKE) -C $(LIBFT) rec
 	rm -f *.o
+
+recc: fclean all
+	$(MAKE) -C $(LIBFT) rec
+	rm -f *.o
+	clear
