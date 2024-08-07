@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 12:29:30 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/07 14:54:08 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/07 17:40:57 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,15 @@ static void validate_number_main(t_stack **stack_a, char **numbers, int index)
 	int value;
 
 	value = ft_atoi(numbers[index]);
-	additem(stack_a, value);
-	// if (!exist_number(*stack_a, value))
-	// 	additem(stack_a, value);
-	// else
-	// {
-	// 	clean_stack(stack_a);
-	// 	ft_printf("Error\n");
-	// 	free(numbers);
-	// 	exit(1);
-	// }
+	if (!exist_number(*stack_a, value))
+		additem(stack_a, value);
+	else
+	{
+		clean_stack(stack_a);
+		ft_printf("Error\n");
+		free(numbers);
+		exit(1);
+	}
 }
 
 static void add_numbers(t_stack **stack_a, char *argv[])
@@ -99,9 +98,11 @@ static void add_numbers(t_stack **stack_a, char *argv[])
 				free(numbers);
 				exit(1);
 			}
-			index++;
 			free(numbers[index]);
+			index++;
 		}
+		while (numbers[--index])
+			free(numbers[index]);
 		free(numbers);
 		index_arg++;
 	}
