@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 12:29:30 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/04 17:54:31 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/07 14:54:08 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <limits.h>
 #include <time.h>
 
-void	fill_stack_with_unique_numbers(t_stack **head, int count)
+void fill_stack_with_unique_numbers(t_stack **head, int count)
 {
-	int	i;
-	int	is_unique;
+	int i;
+	int is_unique;
 
 	int used_numbers[100] = {0}; // Array para rastrear números já usados
 	i = 0;
@@ -32,7 +32,7 @@ void	fill_stack_with_unique_numbers(t_stack **head, int count)
 			if (used_numbers[j] == num)
 			{
 				is_unique = 0;
-				break ;
+				break;
 			}
 		}
 		// Se o número é único, adicione à pilha
@@ -45,7 +45,7 @@ void	fill_stack_with_unique_numbers(t_stack **head, int count)
 	}
 }
 
-void	imprimir(t_stack *list)
+void imprimir(t_stack *list)
 {
 	while (list != NULL)
 	{
@@ -54,66 +54,70 @@ void	imprimir(t_stack *list)
 	}
 }
 
-static void	init_stacks(t_datas **datas)
+static void init_stacks(t_datas **datas)
 {
 	(*datas)->stack_a = NULL;
 	(*datas)->stack_b = NULL;
 }
 
-static void	validate_number_main(t_datas **datas, int index)
+static void validate_number_main(t_stack **stack_a, char **numbers, int index)
 {
-	int	value;
+	int value;
 
-	value = ft_atoi((*datas)->numbers[index]);
-	if (!exist_number((*datas)->stack_a, value))
-		additem(&(*datas)->stack_a, value);
-	else
-	{
-		clean_stack(&(*datas)->stack_a);
-		ft_printf("Error\n");
-		free((*datas)->numbers);
-		exit(1);
-	}
+	value = ft_atoi(numbers[index]);
+	additem(stack_a, value);
+	// if (!exist_number(*stack_a, value))
+	// 	additem(stack_a, value);
+	// else
+	// {
+	// 	clean_stack(stack_a);
+	// 	ft_printf("Error\n");
+	// 	free(numbers);
+	// 	exit(1);
+	// }
 }
 
-static void	add_numbers(t_datas **datas, char *argv[])
+static void add_numbers(t_stack **stack_a, char *argv[])
 {
-	int	index;
-	int	index_arg;
+	int index;
+	int index_arg;
+	char **numbers;
 
 	index_arg = 1;
 	while (argv[index_arg])
 	{
-		(*datas)->numbers = ft_split(argv[index_arg], ' ');
+		numbers = ft_split(argv[index_arg], ' ');
 		index = 0;
-		while ((*datas)->numbers[index])
+		while (numbers[index])
 		{
-			if (validate_number((*datas)->numbers[index]))
-				validate_number_main(datas, index);
+			if (validate_number(numbers[index]))
+				validate_number_main(stack_a, numbers, index);
 			else
 			{
-				clean_stack(&(*datas)->stack_a);
+				clean_stack(stack_a);
 				ft_printf("Error\n");
-				free((*datas)->numbers);
+				free(numbers);
 				exit(1);
 			}
 			index++;
+			free(numbers[index]);
 		}
-		// free((*datas)->numbers);
+		free(numbers);
 		index_arg++;
 	}
 }
 
-int	main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	t_datas	*datas;
-
+	t_stack *stack_a;
+	t_stack *stack_b;
+	
 	if (argc < 2)
 		return (1);
-	init_stacks(&datas);
-	// add_numbers(&datas, argv);
-	fill_stack_with_unique_numbers(&datas->stack_a,100);
-	calculate_plus(&datas->stack_a, &datas->stack_b);
-	clean_stack(&datas->stack_a);
+	stack_a = NULL;
+	stack_b = NULL;
+	add_numbers(&stack_a, argv);
+	//calculate_plus(&stack_a, &stack_b);
+	clean_stack(&stack_a);
 	return (0);
 }

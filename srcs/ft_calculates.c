@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:02:02 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/04 18:01:03 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/07 14:39:12 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	calculate_three(t_stack **pilha)
 
 void	calculate_plus(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*item;
-	int		max_value;
 	if(ft_is_ordered(*stack_a))
 		return;
 	while (stack_len(*stack_a) > 3)

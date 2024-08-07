@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:43:41 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/03 20:28:47 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/07 14:12:10 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void	rules_rrotate(t_stack **stack, char *ms)
 	ft_printf("%s", ms);
 }
 
-void	rules_rrotates(t_stack **stack_a, t_stack **stack_b)
+void	rules_rotates(t_stack **stack_a, t_stack **stack_b)
 {
 	rules_rotate(stack_a, "");
 	rules_rotate(stack_b, "");
 	ft_printf("rr\n");
 }
 
-void	rules_rrrotates(t_stack **stack_a, t_stack **stack_b)
+void	rules_rrotates(t_stack **stack_a, t_stack **stack_b)
 {
 	rules_rrotate(stack_a, "");
 	rules_rrotate(stack_b, "");

@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 20:03:00 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/04 15:30:04 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/07 14:12:56 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	check_top(t_stack **stack_a, t_stack **stack_b)
 	while (*stack_a != item->target && *stack_b != item)
 	{
 		if (item->target->medium == UP && item->medium == UP)
-			rules_rrotates(stack_a, stack_b);
+			rules_rotates(stack_a, stack_b);
 		else
-			rules_rrrotates(stack_a, stack_b);
+			rules_rrotates(stack_a, stack_b);
 	}
 	while (*stack_a != item->target)
 	{

@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:16:09 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/04 15:16:36 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/07 14:12:30 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void				set_cheapest(t_stack *stack_b);
 void				rules_push(t_stack **stack1, t_stack **stack2, char *ms);
 void				rules_rotate(t_stack **stack, char *ms);
 void				rules_rrotate(t_stack **stack, char *ms);
+void				rules_rotates(t_stack **stack_a, t_stack **stack_b);
 void				rules_rrotates(t_stack **stack_a, t_stack **stack_b);
-void				rules_rrrotates(t_stack **stack_a, t_stack **stack_b);
 void				rules_swap(t_stack **stack, char *ms);
 
 void				calculate_three(t_stack **stack);
