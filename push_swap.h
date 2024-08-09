@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:16:09 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/07 14:12:30 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/09 13:45:09 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void				calculate_three(t_stack **stack);
 void				calculate_plus(t_stack **stack_a, t_stack **stack_b);
 
 int					validate_number(char *str_nbr);
+void				add_string_arg(char	*arg, t_stack **stack_a);
+void				add_args(t_stack **stack_a, char *argv[]);
 int					exist_number(t_stack *stack, int value);
 
 int					get_max_value(t_stack *stack);
