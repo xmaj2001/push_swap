@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 13:32:00 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/09 14:02:57 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/12 09:57:42 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,35 @@ static void free_split(char **strs)
 	while (strs[i])
 		free(strs[i++]);
 	free(strs);
+}
+
+static char		**ft_splitx(char *str)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	**split;
+
+	i = 0;
+	k = 0;
+	if (!(split = (char **)malloc(sizeof(char *) * 256)))
+		return (NULL);
+	while (str[i] == ' ')
+		i += 1;
+	while (str[i])
+	{
+		j = 0;
+		if (!(split[k] = (char *)malloc(sizeof(char) * 4096)))
+			return (NULL);
+		while (str[i] != ' ' && str[i])
+			split[k][j++] = str[i++];
+		while (str[i] == ' ')
+			i += 1;
+		split[k][j] = '\0';
+		k += 1;
+	}
+	split[k] = NULL;
+	return (split);
 }
 
 static void exit_app(t_stack **stack_a)
@@ -46,7 +75,7 @@ void add_string_arg(char *arg, t_stack **stack_a)
 	int index;
 	char **numbers;
 
-	numbers = ft_split(arg, ' ');
+	numbers = ft_splitx(arg);
 	index = 0;
 	while (numbers[index])
 	{
