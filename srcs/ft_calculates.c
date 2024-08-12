@@ -6,15 +6,15 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:02:02 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/07 14:39:12 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/12 11:31:21 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	calculate_three(t_stack **pilha)
+void calculate_three(t_stack **pilha)
 {
-	int	max;
+	int max;
 
 	max = get_max_value(*pilha);
 	while (ft_is_ordered(*pilha) != 1)
@@ -28,11 +28,13 @@ void	calculate_three(t_stack **pilha)
 	}
 }
 
-void	calculate_plus(t_stack **stack_a, t_stack **stack_b)
+void calculate_plus(t_stack **stack_a, t_stack **stack_b)
 {
-	if(ft_is_ordered(*stack_a))
+	if (ft_is_ordered(*stack_a))
 		return;
-	while (stack_len(*stack_a) > 3)
+	if ((*stack_a)->value == get_max_value(*stack_a))
+		rules_rotate(stack_a, "ra\n");
+	while (stack_len(*stack_a) > 3 && !ft_is_ordered(*stack_a))
 		rules_push(stack_a, stack_b, "pb");
 	calculate_three(stack_a);
 	while (stack_len(*stack_b) > 0)
@@ -48,7 +50,7 @@ void	calculate_plus(t_stack **stack_a, t_stack **stack_b)
 	while (ft_is_ordered(*stack_a) != 1)
 	{
 		if (get_min_item(*stack_a)->medium == DOWN)
-			rules_rrotate(stack_a, "rra\n");     
+			rules_rrotate(stack_a, "rra\n");
 		else
 			rules_rotate(stack_a, "ra\n");
 	}
