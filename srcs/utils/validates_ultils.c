@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 10:39:29 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/12 09:34:29 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/13 15:14:29 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,23 @@ int	exist_number(t_stack *stack, int value)
 	return (0);
 }
 
+int	ft_is_ordered(t_stack *stack)
+{
+	t_stack	*item;
+	int		result;
+
+	if (stack == NULL)
+		return (0);
+	item = stack;
+	result = item->value;
+	while (item != NULL)
+	{
+		if (result <= item->value)
+			result = item->value;
+		else
+			return (0);
+		item = item->next;
+	}
+	return (1);
+}
 

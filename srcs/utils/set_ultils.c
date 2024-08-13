@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 20:48:46 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/04 11:45:19 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/13 12:55:01 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,7 @@ void	set_numbers_operations(t_stack *stack_a, t_stack *stack_b)
 		if (stack_b->target->medium == UP)
 			stack_b->operation += stack_b->target->index;
 		else
-			stack_b->operation = stack_len(stack_a);
-		-stack_b->target->index;
+			stack_b->operation = stack_len(stack_a) -stack_b->target->index;
 		stack_b = stack_b->next;
 	}
 }

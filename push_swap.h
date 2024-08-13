@@ -6,13 +6,12 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:16:09 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/09 13:45:09 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/13 15:14:57 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "./libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 
@@ -66,6 +65,11 @@ int					validate_number(char *str_nbr);
 void				add_string_arg(char	*arg, t_stack **stack_a);
 void				add_args(t_stack **stack_a, char *argv[]);
 int					exist_number(t_stack *stack, int value);
+
+int					ft_isdigit(int c);
+int					ft_atoi(const char *nptr);
+size_t				ft_strlen(const char *s);
+void				ft_putstr(char *s);
 
 int					get_max_value(t_stack *stack);
 int					get_min_value(t_stack *stack);

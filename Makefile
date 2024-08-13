@@ -6,41 +6,50 @@
 #    By: xjose <xjose@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/12 11:36:52 by xjose             #+#    #+#              #
-#    Updated: 2024/08/12 11:36:52 by xjose            ###   ########.fr        #
+#    Updated: 2024/08/13 15:15:56 by xjose            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-
 NAME = push_swap
 
-LIBFT = ./libft
 CFLAGS = -Wall -Wextra -Werror
-CFILS = srcs/*.c srcs/rules/*.c srcs/utils/*.c 
+
+SRCS = ./srcs/args.c\
+		./srcs/check.c\
+		./srcs/ft_calculates.c\
+
+RULES = ./srcs/rules/rules_push.c\
+		./srcs/rules/rules_rotate.c\
+		./srcs/rules/rules_swap.c\
+
+UTILS = ./srcs/utils/get_ultils2.c\
+		./srcs/utils/get_ultils.c\
+		./srcs/utils/set_ultils.c\
+		./srcs/utils/stack_ultils.c\
+		./srcs/utils/utlis_item.c\
+		./srcs/utils/validates_ultils.c
+
+CFILS = $(SRCS) $(RULES) $(UTILS)
+
 CC = cc
 
 
 all: $(NAME)
 
 $(NAME):
-	$(MAKE) -C $(LIBFT)
-	$(CC) main.c $(CFILS) -o $(NAME) -L$(LIBFT) -lft
-
+	$(CC) $(CFLAGS) main.c $(CFILS) -L$(LIBFT) -lft -o $(NAME) 
+	
 clean:
-	$(MAKE) -C $(LIBFT) clean
 	rm -f *.o
 
 fclean: clean
-	$(MAKE) -C $(LIBFT) fclean
 	rm -f $(NAME)
 
 re: fclean all
 	
 rec: fclean all
-	$(MAKE) -C $(LIBFT) rec
 	rm -f *.o
 
 recc: fclean all
-	$(MAKE) -C $(LIBFT) rec
 	rm -f *.o
 	clear

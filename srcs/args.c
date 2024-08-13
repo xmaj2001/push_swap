@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 13:32:00 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/12 09:57:42 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/13 15:12:56 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char		**ft_splitx(char *str)
 static void exit_app(t_stack **stack_a)
 {
 	clean_stack(stack_a);
-	ft_printf("Error\n");
+	ft_putstr("Error\n");
 	exit(1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:15:39 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/03 19:34:41 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/13 15:11:48 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	rules_swap(t_stack **stack, char *ms)
 	frist->next = second->next;
 	second->next = frist;
 	*stack = second;
-	ft_printf("%s\n", ms);
+	ft_putstr(ms);
+	ft_putstr("\n");
 }
