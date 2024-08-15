@@ -6,21 +6,21 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 20:48:46 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/15 09:07:46 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 15:59:24 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 #include <limits.h>
 
-void additem(t_stack **stack, int value)
+void	additem(t_stack **stack, int value)
 {
-	t_stack *item;
-	t_stack *last;
+	t_stack	*item;
+	t_stack	*last;
 
 	item = (t_stack *)malloc(sizeof(t_stack) * 1);
 	if (item == NULL)
-		return;
+		return ;
 	item->value = value;
 	if (*stack == NULL)
 	{
@@ -35,10 +35,10 @@ void additem(t_stack **stack, int value)
 	}
 }
 
-void set_index(t_stack *stack)
+void	set_index(t_stack *stack)
 {
-	int medium;
-	int index;
+	int	medium;
+	int	index;
 
 	index = 0;
 	medium = stack_len(stack) / 2;
@@ -54,10 +54,10 @@ void set_index(t_stack *stack)
 	}
 }
 
-void set_target(t_stack *stack_a, t_stack *stack_b)
+void	set_target(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack *item;
-	int best_match;
+	t_stack	*item;
+	int		best_match;
 
 	while (stack_b != NULL)
 	{
@@ -78,9 +78,9 @@ void set_target(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void set_numbers_operations(t_stack *stack_a, t_stack *stack_b)
+void	set_numbers_operations(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack *item;
+	t_stack	*item;
 
 	item = stack_b;
 	while (stack_b)
@@ -90,26 +90,27 @@ void set_numbers_operations(t_stack *stack_a, t_stack *stack_b)
 			stack_b->operation = stack_len(item) - stack_b->index;
 		if (stack_b->target->medium == stack_b->medium)
 		{
-			if (stack_b->target->index > stack_b->operation && stack_b->medium == UP)
+			if (stack_b->target->index > stack_b->operation
+				&& stack_b->medium == UP)
 				stack_b->operation = stack_b->target->index;
-			else if ((stack_len(stack_a) - stack_b->target->index) > stack_b->operation && stack_b->medium == DOWN)
-				stack_b->operation = (stack_len(stack_a) - stack_b->target->index);
+			else if (gettarget_is_greater(stack_a, stack_b) && !stack_b->medium)
+				stack_b->operation = get_def(stack_a, stack_b);
 		}
 		else if (stack_b->target->medium != stack_b->medium)
 		{
 			if (stack_b->target->medium == UP)
 				stack_b->operation += stack_b->target->index;
 			else
-				stack_b->operation += (stack_len(stack_a) - stack_b->target->index);
+				stack_b->operation += get_def(stack_a, stack_b);
 		}
 		stack_b = stack_b->next;
 	}
 }
 
-void set_cheapest(t_stack *stack_b)
+void	set_cheapest(t_stack *stack_b)
 {
-	int cheapest;
-	t_stack *item;
+	int		cheapest;
+	t_stack	*item;
 
 	cheapest = INT_MAX;
 	while (stack_b)

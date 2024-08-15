@@ -6,16 +6,16 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 12:29:30 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/12 09:52:57 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 13:46:46 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	if (argc < 2)
 		return (1);

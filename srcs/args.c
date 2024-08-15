@@ -6,15 +6,16 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 13:32:00 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/15 11:58:10 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 16:52:50 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <limits.h>
 
-static void free_split(char **strs)
+static	void	free_split(char **strs)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (strs[i])
@@ -22,18 +23,20 @@ static void free_split(char **strs)
 	free(strs);
 }
 
-static void exit_app(t_stack **stack_a)
+static	void	exit_app(t_stack **stack_a)
 {
 	clean_stack(stack_a);
 	ft_putstr("Error\n");
 	exit(1);
 }
 
-static int validate_number_main(t_stack **stack_a, char **numbers, int index)
+static	int	validate_number_main(t_stack **stack_a, char **numbers, int index)
 {
-	int value;
+	long long	value;
 
 	value = ft_atoi(numbers[index]);
+	if (value >= INT_MAX || value <= INT_MIN)
+		return (0);
 	if (!exist_number(*stack_a, value))
 		additem(stack_a, value);
 	else
@@ -41,10 +44,10 @@ static int validate_number_main(t_stack **stack_a, char **numbers, int index)
 	return (1);
 }
 
-void add_string_arg(char *arg, t_stack **stack_a)
+void	add_string_arg(char *arg, t_stack **stack_a)
 {
-	int index;
-	char **numbers;
+	int		index;
+	char	**numbers;
 
 	numbers = ft_split(arg, ' ');
 	index = 0;
@@ -68,9 +71,9 @@ void add_string_arg(char *arg, t_stack **stack_a)
 	free_split(numbers);
 }
 
-void add_args(t_stack **stack_a, char *argv[])
+void	add_args(t_stack **stack_a, char *argv[])
 {
-	int index;
+	int	index;
 
 	index = 1;
 	while (argv[index])

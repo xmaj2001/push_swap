@@ -6,15 +6,15 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:02:02 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/13 17:49:06 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 15:30:30 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void calculate_three(t_stack **pilha)
+void	calculate_three(t_stack **pilha)
 {
-	int max;
+	int	max;
 
 	max = get_max_value(*pilha);
 	while (ft_is_ordered(*pilha) != 1)
@@ -28,7 +28,7 @@ void calculate_three(t_stack **pilha)
 	}
 }
 
-void calculate_plus(t_stack **stack_a, t_stack **stack_b)
+void	calculate_plus(t_stack **stack_a, t_stack **stack_b)
 {
 	while (stack_len(*stack_a) > 3)
 		rules_push(stack_a, stack_b, "pb");

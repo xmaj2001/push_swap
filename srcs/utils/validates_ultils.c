@@ -6,15 +6,15 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 10:39:29 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/15 12:42:51 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 16:38:40 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int validate_number(char *str_nbr)
+int	validate_number(char *str_nbr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str_nbr[i])
@@ -33,7 +33,7 @@ int validate_number(char *str_nbr)
 	return (1);
 }
 
-int exist_number(t_stack *stack, int value)
+int	exist_number(t_stack *stack, int value)
 {
 	if (stack == NULL)
 		return (0);
@@ -46,10 +46,10 @@ int exist_number(t_stack *stack, int value)
 	return (0);
 }
 
-int ft_is_ordered(t_stack *stack)
+int	ft_is_ordered(t_stack *stack)
 {
-	t_stack *item;
-	int result;
+	t_stack	*item;
+	int		result;
 
 	if (stack == NULL)
 		return (0);

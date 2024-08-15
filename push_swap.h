@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:16:09 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/15 11:58:49 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 16:44:16 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,11 @@ int					exist_number(t_stack *stack, int value);
 
 int					ft_isdigit(int c);
 char				**ft_split(char const *str, char c);
-int					ft_atoi(const char *nptr);
+long long			ft_atoi(const char *nptr);
 size_t				ft_strlen(const char *s);
 void				ft_putstr(char *s);
+int					gettarget_is_greater(t_stack *stack_a, t_stack *stack_b);
+int					get_def(t_stack *stack1, t_stack *stack2);
 
 int					get_max_value(t_stack *stack);
 int					get_min_value(t_stack *stack);

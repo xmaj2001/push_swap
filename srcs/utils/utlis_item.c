@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 20:48:46 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/13 15:15:19 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 16:44:21 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	ft_isspace(int c)
 	return (c == ' ' || (c >= '\t' && c <= '\r'));
 }
 
-int	ft_atoi(const char *nptr)
+long long	ft_atoi(const char *nptr)
 {
 	int			sign;
 	long long	nbr;
