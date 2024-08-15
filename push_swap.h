@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:16:09 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/13 15:14:57 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 11:58:49 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void				add_args(t_stack **stack_a, char *argv[]);
 int					exist_number(t_stack *stack, int value);
 
 int					ft_isdigit(int c);
+char				**ft_split(char const *str, char c);
 int					ft_atoi(const char *nptr);
 size_t				ft_strlen(const char *s);
 void				ft_putstr(char *s);

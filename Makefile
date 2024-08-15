@@ -6,7 +6,7 @@
 #    By: xjose <xjose@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/12 11:36:52 by xjose             #+#    #+#              #
-#    Updated: 2024/08/15 09:56:45 by xjose            ###   ########.fr        #
+#    Updated: 2024/08/15 11:59:13 by xjose            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = ./srcs/args.c\
 		./srcs/check.c\
 		./srcs/ft_calculates.c\
+		./srcs/ft_split.c\
 
 RULES = ./srcs/rules/rules_push.c\
 		./srcs/rules/rules_rotate.c\
