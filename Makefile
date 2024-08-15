@@ -6,7 +6,7 @@
 #    By: xjose <xjose@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/12 11:36:52 by xjose             #+#    #+#              #
-#    Updated: 2024/08/13 15:15:56 by xjose            ###   ########.fr        #
+#    Updated: 2024/08/15 09:56:45 by xjose            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ CC = cc
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) main.c $(CFILS) -L$(LIBFT) -lft -o $(NAME) 
+	$(CC) $(CFLAGS) main.c $(CFILS) -o $(NAME) 
 	
 clean:
 	rm -f *.o
