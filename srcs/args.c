@@ -6,22 +6,12 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 13:32:00 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/15 16:52:50 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 19:28:23 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <limits.h>
-
-static	void	free_split(char **strs)
-{
-	int	i;
-
-	i = 0;
-	while (strs[i])
-		free(strs[i++]);
-	free(strs);
-}
 
 static	void	exit_app(t_stack **stack_a)
 {
@@ -50,6 +40,8 @@ void	add_string_arg(char *arg, t_stack **stack_a)
 	char	**numbers;
 
 	numbers = ft_split(arg, ' ');
+	if (*numbers == NULL)
+		exit_app2(numbers);
 	index = 0;
 	while (numbers[index])
 	{

@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 02:16:09 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/15 16:44:16 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 19:24:50 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ int					validate_number(char *str_nbr);
 void				add_string_arg(char	*arg, t_stack **stack_a);
 void				add_args(t_stack **stack_a, char *argv[]);
 int					exist_number(t_stack *stack, int value);
-
+void				free_split(char **strs);
+void				exit_app2(char **numbers);
 int					ft_isdigit(int c);
 char				**ft_split(char const *str, char c);
 long long			ft_atoi(const char *nptr);

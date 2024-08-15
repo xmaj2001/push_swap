@@ -6,11 +6,12 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 20:48:46 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/03 20:31:10 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/15 19:26:09 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+#include <limits.h>
 
 int	get_max_value(t_stack *stack)
 {
@@ -20,7 +21,7 @@ int	get_max_value(t_stack *stack)
 	if (stack == NULL)
 		return (0);
 	item = stack;
-	max = 0;
+	max = INT_MIN;
 	while (item != NULL)
 	{
 		if (max < item->value)
