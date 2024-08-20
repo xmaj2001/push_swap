@@ -6,7 +6,7 @@
 /*   By: xjose <xjose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 13:32:00 by xjose             #+#    #+#             */
-/*   Updated: 2024/08/15 19:28:23 by xjose            ###   ########.fr       */
+/*   Updated: 2024/08/20 09:46:54 by xjose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	int	validate_number_main(t_stack **stack_a, char **numbers, int index)
 	long long	value;
 
 	value = ft_atoi(numbers[index]);
-	if (value >= INT_MAX || value <= INT_MIN)
+	if (value > INT_MAX || value < INT_MIN)
 		return (0);
 	if (!exist_number(*stack_a, value))
 		additem(stack_a, value);
